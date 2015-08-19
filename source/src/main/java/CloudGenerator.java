@@ -1104,8 +1104,10 @@ public class CloudGenerator {
             convertSvgToPng(CLOUD_BG_SVG, CLOUD_BG_PNG, 1024, size, null);
 
             final WordCloud wordCloud = new WordCloud(size, size, CollisionMode.RECTANGLE, true);
-            final String[] EXTRA_WORDS = {"mokeeopensource", "android", "aosp",
-                    "nexus", "bacon", "adb", "apk", "dalvik", "droid", "logcat", "fastboot"};
+            final String[] EXTRA_WORDS = {"mokee", "android", "aosp", "rom", "opensource", "firmware",
+                    "nexus", "bacon", "adb", "apk", "dalvik", "droid", "logcat", "fastboot", "mfunz",
+                    "bootloader", "recovery", "cupcake", "donut", "eclair", "froyo", "gingerbread",
+                    "honeycomb", "ice cream sandwich", "jelly bean", "kitkat", "lollipop", "marshmallow"};
             Font font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(CLOUD_FONT));
             wordCloud.setCloudFont(new CloudFont(font));
             wordCloud.setPadding(1);
