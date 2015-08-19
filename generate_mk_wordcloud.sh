@@ -32,7 +32,7 @@ if [ "$FETCH_ACCOUNTS" = true ]; then
     echo "FETCHING NEW ACCOUNTS FROM $ACCOUNT ...";
     until [ $ERRORS -eq 10 ]; do
         let ACCOUNT+=1
-        wget -O $ACCOUNTS_DIR/$ACCOUNT http://review.cyanogenmod.org/accounts/$ACCOUNT
+        wget -O $ACCOUNTS_DIR/$ACCOUNT http://review.mfunz.com/accounts/$ACCOUNT
         if [ $? -ne 0 ]; then
             let ERRORS+=1
             rm $ACCOUNTS_DIR/$ACCOUNT
@@ -54,9 +54,9 @@ PROJECTS_LIST_TMP=$PROJECTS_DIR/list.txt.tmp
 mkdir -p $PROJECTS_DIR
 rm -Rf $STATS_DIR
 mkdir -p $STATS_DIR
-wget -O $PROJECTS_LIST http://review.cyanogenmod.org/projects/?p=CyanogenMod%2F \
+wget -O $PROJECTS_LIST http://review.mfunz.com/projects/?p=MoKee%2F \
     && perl -i -pe  's/%2F/\//g' $PROJECTS_LIST \
-    && grep "\"id\":" $PROJECTS_LIST | awk -F"\"" '{print $4}' | grep -v "CyanogenMod\/\.\|CyanogenMod\/CyanogenMod\|CMStatsServer\|m7wls\|hltecan\|hltexx\|v2wifixx\|lotus\|v909\|Focal\|svox\|derp\|ctso_supplicant" > $PROJECTS_LIST_TMP \
+    && grep "\"id\":" $PROJECTS_LIST | awk -F"\"" '{print $4}' | grep -v "MoKee\/\.\|MoKee\/MoKee\|m7wls\|hltecan\|hltexx\|v2wifixx\|lotus\|v909\|Focal\|svox\|derp\|ctso_supplicant" > $PROJECTS_LIST_TMP \
     && mv $PROJECTS_LIST_TMP $PROJECTS_LIST \
     && rm $PROJECTS_LIST.bak
 cat $PROJECTS_LIST | xargs --max-procs=$MAXJOBS -I % ./repo_fetch.sh %

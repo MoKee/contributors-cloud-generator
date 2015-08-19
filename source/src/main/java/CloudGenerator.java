@@ -72,8 +72,8 @@ public class CloudGenerator {
     private static final String CLOUD_DATA_OUTPUT = ROOT_DIR + "out/cloud.data";
     private static final String CLOUD_DIST_FILE = ROOT_DIR + "out/cloud.zip";
 
-    private static final String CLOUD_BG_SVG = ROOT_DIR + "resources/cid_head.svg";
-    private static final String CLOUD_BG_PNG = ROOT_DIR + "resources/cid_head.png";
+    private static final String CLOUD_BG_SVG = ROOT_DIR + "resources/mokee_head.svg";
+    private static final String CLOUD_BG_PNG = ROOT_DIR + "resources/mokee_head.png";
     private static final String CLOUD_FONT = ROOT_DIR + "resources/Roboto-Bold.ttf";
     private static final String LAST_CLOUD_SIZE = ROOT_DIR + "db/last_cloud_size.txt";
     private static final int DEFAULT_CLOUD_SIZE = 1920;
@@ -363,7 +363,7 @@ public class CloudGenerator {
     }
 
     private static void fetchAllGerritCommits() throws Exception {
-        final StringBuffer start = new StringBuffer("2010-10-28");
+        final StringBuffer start = new StringBuffer("2012-12-12");
         File statsDir = new File(CHANGES_DIR);
         FileUtils.listFiles(statsDir, new IOFileFilter() {
             @Override
@@ -426,7 +426,7 @@ public class CloudGenerator {
         final int count = 250;
         while (true) {
             try {
-                String url = "http://review.cyanogenmod.org/changes/?q=status:merged+before:\"" + start + "\"+after:\"" + end + "\"&n=" + count + "&O=a&o=DETAILED_ACCOUNTS";
+                String url = "http://review.mfunz.com/changes/?q=status:merged+before:\"" + start + "\"+after:\"" + end + "\"&n=" + count + "&O=a&o=DETAILED_ACCOUNTS";
                 if (s > 0) {
                     url += "&S="+s;
                 }
@@ -1057,9 +1057,9 @@ public class CloudGenerator {
             if (isEmpty(name)) {
                 owner = name + " <" + email + ">";
             }
-            url = "http://review.cyanogenmod.org/changes/?q=status:merged+owner:\"" + owner+ "\"&limit=1";
+            url = "http://review.mfunz.com/changes/?q=status:merged+owner:\"" + owner+ "\"&limit=1";
             owner = URLEncoder.encode(owner, "UTF-8");
-            is = new URL("http://review.cyanogenmod.org/changes/?q=status:merged+owner:\"" + owner+ "\"&limit=1").openStream();
+            is = new URL("http://review.mfunz.com/changes/?q=status:merged+owner:\"" + owner+ "\"&limit=1").openStream();
             byte[] data = new byte[11];
             int read = is.read(data);
             LOGGER.info ("Fetched " + url + ": " + (read > 8));
@@ -1104,7 +1104,7 @@ public class CloudGenerator {
             convertSvgToPng(CLOUD_BG_SVG, CLOUD_BG_PNG, 1024, size, null);
 
             final WordCloud wordCloud = new WordCloud(size, size, CollisionMode.RECTANGLE, true);
-            final String[] EXTRA_WORDS = {"cid", "cyanogenmod", "android", "aosp",
+            final String[] EXTRA_WORDS = {"mokeeopensource", "android", "aosp",
                     "nexus", "bacon", "adb", "apk", "dalvik", "droid", "logcat", "fastboot"};
             Font font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(CLOUD_FONT));
             wordCloud.setCloudFont(new CloudFont(font));
