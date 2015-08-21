@@ -1107,7 +1107,7 @@ public class CloudGenerator {
             final String[] EXTRA_WORDS = {"mokee", "android", "aosp", "rom", "opensource", "firmware",
                     "nexus", "bacon", "adb", "apk", "dalvik", "droid", "logcat", "fastboot", "mfunz",
                     "bootloader", "recovery", "cupcake", "donut", "eclair", "froyo", "gingerbread",
-                    "honeycomb", "ice cream sandwich", "jelly bean", "kitkat", "lollipop", "marshmallow"};
+                    "honeycomb", "icecreamsandwich", "jellybean", "kitkat", "lollipop", "marshmallow"};
             Font font = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(CLOUD_FONT));
             wordCloud.setCloudFont(new CloudFont(font));
             wordCloud.setPadding(1);
