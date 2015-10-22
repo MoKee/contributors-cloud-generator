@@ -62,7 +62,7 @@ wget -O $PROJECTS_LIST http://review.mfunz.com/projects/?p=MoKee%2F \
 cat $PROJECTS_LIST | xargs --max-procs=$MAXJOBS -I % ./repo_fetch.sh %
 
 # Generate the cloud
-java -classpath "./lib/*" CloudGenerator
+java -Dfile.encoding=UTF-8 -classpath "./lib/*" CloudGenerator
 
 # Done
 echo ""
