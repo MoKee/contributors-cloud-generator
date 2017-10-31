@@ -11,7 +11,7 @@ if [ ! -d "$REPO_DIR" ]; then
     mkdir -p $REPO_DIR
     cd $REPO_DIR
     $GIT_CMD init
-    $GIT_CMD remote add origin ssh://martincz@review.mfunz.com:29418/$1.git
+    $GIT_CMD remote add origin ssh://martincz@mokeedev.review:29418/$1.git
     $GIT_CMD fetch
 else
     cd $REPO_DIR
