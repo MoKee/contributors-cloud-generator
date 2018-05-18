@@ -2,7 +2,7 @@
 
 ## Declares
 script_datestart=$(date +"%s")
-MAXJOBS=16
+MAXJOBS=1
 
 OUT_DIR=out
 OUT_CLOUD_ZIP=out/cloud.zip
