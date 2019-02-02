@@ -8,8 +8,13 @@ OLD_PWD=`pwd`
 REPO_DIR=$OLD_PWD/db/repos/$1
 STATS_DIR=$OLD_PWD/db/stats/$1
 
-echo "REPO: $REPO_DIR"
-if [ ! -d "$REPO_DIR" ]; then
+MIRROR_DIR=$MIRROR_ROOT/$1.git
+
+if [ -d "$MIRROR_DIR" ]; then
+    echo "MIRROR: $MIRROR_DIR"
+    cd "$MIRROR_DIR"
+elif [ ! -d "$REPO_DIR" ]; then
+    echo "REPO: $REPO_DIR"
     mkdir -p $REPO_DIR
     cd $REPO_DIR
     $GIT_CMD init
@@ -17,6 +22,7 @@ if [ ! -d "$REPO_DIR" ]; then
     $GIT_CMD remote add origin ssh://martincz@mokeedev.review:29418/$1.git
     $GIT_CMD fetch
 else
+    echo "REPO: $REPO_DIR"
     cd $REPO_DIR
     $GIT_CMD fetch
 fi
