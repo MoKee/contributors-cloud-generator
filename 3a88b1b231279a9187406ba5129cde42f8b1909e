@@ -1,0 +1,4 @@
+{
+  "pushCert": "certificate version 0.1\npusher 2ECD2531 1560050649 +0800\npushee ssh://mokeedev.review:29418/MoKee/contributors-cloud-generator\nnonce 1560050648-13B4A32C0C45AF62E7E2F00BED1676DCC20F3BD5\n\n0000000000000000000000000000000000000000 3a88b1b231279a9187406ba5129cde42f8b1909e refs/for/master\n-----BEGIN PGP SIGNATURE-----\n\niQEzBAABCgAdFiEE/Y8fKHw84zhHjhP78iL05i7NJTEFAlz8e9kACgkQ8iL05i7N\nJTE0Igf/a3WyBzBMUwa91LosojOJqNXBTGt6DBdG12fRTQhTyRAGhANgmZYKXK8b\n79K9RYopZ8EllkVun0sSZ28CwRql18v8+I7Z+fgnTOB9yfD7lrKiPq97IbnzHWfX\nK0/TYvrGCpfJLpATgnaFc9pa+EWpnEStafx3u2ZyJUc7JltbEaoZrl656BDONzTm\nRhkqmoBq3zzie9FZcxtB7tX+BG3Tjv5AgAE4bhw9sqrVQxfdnkjfs5saY/qvMQwa\nuTVTtygMWPImD8zuujl9oVLT/jK5M+cQ8x27KRFNrkKUmqHz19+Ft1c+HofGPeoL\nm8ZvbXnwZKC/TTXgK/84T7rHY3sM5g\u003d\u003d\n\u003dj+Ks\n-----END PGP SIGNATURE-----\n",
+  "comments": []
+}
