@@ -19,7 +19,7 @@ elif [ ! -d "$REPO_DIR" ]; then
     cd $REPO_DIR
     $GIT_CMD init
 #   $GIT_CMD remote add origin https://$GIT_USER:$GIT_PWD@github.com/$1.git
-    $GIT_CMD remote add origin ssh://martincz@mokeedev.review:29418/$1.git
+    $GIT_CMD remote add origin ssh://$USER@mokeedev.review:29418/$1.git
     $GIT_CMD fetch
 else
     echo "REPO: $REPO_DIR"
